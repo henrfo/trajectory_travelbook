@@ -7,10 +7,9 @@ Travel memoirs documenting a 1.5-year journey across Japan, Thailand, Australia 
 This repository contains the drafts and planning for a travel memoir organized chronologically:
 
 - Introduction
-- Early travel periods (Feb-Mar 2023, Jul-Aug 2023)
-- Japan-specific chapters (Okinawa, Tokyo, Akita)
-- Monthly chapters (Sep 2023 - Dec 2024)
-- Final periods (Spring 2025, Summer 2025)
+- Before departure (Feb-Mar 2023, Jul-Aug 2023)
+- Monthly chapters (Sep 2023 - Dec 2024, occasionally organized by geographic location or significant experiences rather than strictly by timeline)
+- Back home (Spring 2025, Summer 2025)
 
 ## Format
 
