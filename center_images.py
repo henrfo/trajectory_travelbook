@@ -1,0 +1,72 @@
+#!/usr/bin/env python3
+"""
+Simple script to center all images in Markdown files.
+Run this from your repository root whenever you want to center images.
+"""
+import os
+import re
+from pathlib import Path
+
+# Path to your chapters
+chapters_dir = Path('drafts/chapters')
+
+# Regular expression to find image tags
+img_pattern = re.compile(r'<img src="[^"]+"(?: style="[^"]+")?.*?/?>')
+
+def center_image(match):
+    """Wrap the image in a centered div."""
+    img_tag = match.group(0)
+    # Make sure the image tag ends properly
+    if not img_tag.endswith('/>'):
+        img_tag = img_tag.rstrip('>') + '/>'
+    return f'<div style="text-align: center;">{img_tag}</div>'
+
+# Check if chapters directory exists
+if not chapters_dir.exists():
+    print(f"Warning: Directory {chapters_dir} does not exist.")
+    # Use fallback directory if chapters_dir doesn't exist
+    chapters_dir = Path('drafts')
+    if not chapters_dir.exists():
+        print(f"Error: Directory {chapters_dir} does not exist either.")
+        exit(1)
+
+# Count for summary
+processed = 0
+modified = 0
+
+# Process each markdown file in the chapters directory
+for md_file in chapters_dir.glob('**/*.md'):
+    processed += 1
+    print(f"Processing {md_file}")
+    try:
+        with open(md_file, 'r', encoding='utf-8') as file:
+            content = file.read()
+        
+        # Replace all image tags with centered image tags
+        # But avoid double-centering by checking if it's already in a centering div
+        modified_content = content
+        for match in re.finditer(img_pattern, content):
+            img_tag = match.group(0)
+            # Check if this image is already in a centering div
+            start_pos = match.start()
+            div_start = content.rfind('<div style="text-align: center;">', 0, start_pos)
+            div_end = content.find('</div>', start_pos)
+            
+            # If not already centered, center it
+            if div_start == -1 or div_end == -1 or div_start > div_end:
+                centered_img = f'<div style="text-align: center;">{img_tag}</div>'
+                modified_content = modified_content.replace(img_tag, centered_img, 1)
+        
+        # Write the modified content back to the file
+        if content != modified_content:
+            with open(md_file, 'w', encoding='utf-8') as file:
+                file.write(modified_content)
+            modified += 1
+            print(f"✅ Centered images in {md_file}")
+        else:
+            print(f"ℹ️ No changes needed for {md_file}")
+    except Exception as e:
+        print(f"❌ Error processing {md_file}: {e}")
+
+# Print summary
+print(f"\nSummary: Processed {processed} files, modified {modified} files.")
