@@ -12,8 +12,12 @@
   - **Jan 2024**: Thailand (brief transition)
   - **Feb - Jun 2024**: Australia (Melbourne - University of Melbourne)
   - **Summer 2024**: Norway (return home)
-  - **Aug 2024 - Present**: United States (San Diego, California)
-  - **2025**: Planned return to Norway
+  - **Aug 2024 - Dec 2024**: United States (San Diego, California)
+  - **30th Dec 2024**: Planned return to Norway
+  - **Start of 2025**: Return to Norway
+  - **April 2025**: Trip to San Diego
+  - **April 2025**: Trip to San Diego, Los Angeles, San Francisco (meeting Dr. Cramer,)
+
 
 ## Core Themes
 
@@ -59,7 +63,11 @@
 ### International Friends
 - **Japan Roommates**: Roger (Sweden), Owen (USA), Moss (Thailand), Theodor (Norway)
 - **Exchange Students**: Antti & Viivi (Finland), Kamilla (Denmark)
+
+### Melbourne
 - **Academic Contacts**: Andrew Perfors, Jason Forte, Marta Garrido, Stefan Bode
+
+### San Diego
 
 ## Project Structure
 
