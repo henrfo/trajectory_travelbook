@@ -8,7 +8,9 @@
       "Bash(find:*)",
       "Bash(find:*)",
       "Bash(ls:*)",
-      "Bash(ls:*)"
+      "Bash(ls:*)",
+      "Bash(grep:*)",
+      "Bash(cat:*)"
     ],
     "deny": []
   }
