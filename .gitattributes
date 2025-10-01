@@ -1,1 +1,4 @@
 drafts/chapters/thoughts_in_progress.md filter=git-crypt diff=git-crypt
+*.mov filter=lfs diff=lfs merge=lfs -text
+*.mp4 filter=lfs diff=lfs merge=lfs -text
+*.AAE filter=lfs diff=lfs merge=lfs -text
